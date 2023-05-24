@@ -20,3 +20,4 @@ make run
 - [ ] Adicionar validação para classes do comando
 - [ ] Padronizar forma de realizar scraping, criar e incrementar algum tipo abstrato para extrair informações de forma mais simples sem precisar de manipulações repetitivas no response. See [scrapy](https://scrapy.org/)
 - [ ] Adequar código as convenções do python. Estudar [Python Enhancement Proposals](https://peps.python.org/pep-0000/)
+- [ ] Adicionar teste unitário, integração necessários.
