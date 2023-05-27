@@ -14,7 +14,7 @@ make run
 
 #### Todo List
 
-- [ ] Configurar container de dependências da aplicação
+- [x] Configurar container de dependências da aplicação
 - [ ] Estruturar porta e formato default de logs para aplicação
 - [ ] Avaliar SDK do Open Telemetry para python
 - [ ] Adicionar validação para classes do comando
