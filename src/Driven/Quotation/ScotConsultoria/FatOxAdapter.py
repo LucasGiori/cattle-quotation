@@ -14,7 +14,6 @@ import re
 
 class FatOxAdapter(QuotationProviderPort):
     PATH = 'https://www.scotconsultoria.com.br/cotacoes/boi-gordo'
-
     def __init__(self, session: Session, logger: LogPort) -> None:
         self.__session = session
         self.__logger = logger
@@ -57,7 +56,7 @@ class FatOxAdapter(QuotationProviderPort):
                     reference_date=Date(reference_date),
                     current=Price(td[1].text),
                     future=Price(td[3].text),
-                    future_without_funrural=Price(td[6].text),
+                    current_without_funrural=Price(td[6].text),
                     future_without_funrural=Price(td[8].text),
                     variation=Variation(td[5].text)
                 )

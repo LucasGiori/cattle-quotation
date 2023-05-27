@@ -12,4 +12,4 @@ class WhatsappAdapter(Client, WhatsappPort):
 
         message = super().messages.create(from_='whatsapp:+14155238886', body=message, to='whatsapp:+556993370285')
         
-        self.__logger.info(message=f'key=twilio-response action=send_message_end')
+        self.__logger.info(message=f'key=twilio-response action=send_message_end response={message.sid}')
