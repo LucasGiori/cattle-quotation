@@ -1,0 +1,22 @@
+version: "3"
+services:
+  quotation:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    env_file:
+      - .env.development
+    networks:
+      - quotation
+    command: python -m src.main
+
+networks:
+  quotation:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.42.0.0/16"
+          gateway: "172.42.0.1"
