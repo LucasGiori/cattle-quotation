@@ -1,4 +1,4 @@
-DOCKER_RUN = docker run --rm -it -l stdout --log-opt mode=non-blocking -v ${PWD}:/app --env PYTHONUNBUFFERED=0 --env-file .env.development -w /app --network=host python:3.8-alpine sh -c
+DOCKER_RUN = docker run --rm -it -l stdout --log-opt mode=non-blocking -p 5000:5000 -v ${PWD}:/app --env PYTHONUNBUFFERED=0 --env-file .env.development -w /app --network=host python:3.8-alpine sh -c
 DOCKER_RUN_ATTACHED = docker run --rm -it -v ${PWD}:/app --env PYTHONUNBUFFERED=0 --env-file .env.development -w /app --network=host python:3.8-alpine sh
 REQUIREMENTS = pip install --upgrade pip -r requirements.txt
 

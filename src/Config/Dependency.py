@@ -1,5 +1,5 @@
 from src.Config.Container import Container
-from src.Port.LogPort import LogPort
+from src.Port import LogPort
 from src.Port.WhatsappPort import WhatsappPort
 from src.Port.QuotationProviderPort import QuotationProviderPort
 from src.Driven.Log.LogAdapter import LogAdapter

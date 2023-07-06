@@ -15,6 +15,7 @@ make run
 #### Todo List
 
 - [x] Configurar container de dependências da aplicação
+- [ ] Adicionar endpoint para webhook para integração com twilio 
 - [ ] Estruturar porta e formato default de logs para aplicação
 - [ ] Avaliar SDK do Open Telemetry para python
 - [ ] Adicionar validação para classes do comando

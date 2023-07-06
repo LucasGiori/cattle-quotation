@@ -4,13 +4,35 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    container_name: quotation
+    environment:
+      - OTEL_TRACES_SAMPLER=parentbased_always_on
+      - OTEL_TRACES_EXPORTER=otlp
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://signoz:4317
+      - OTEL_EXPORTER_OTLP_PROTOCOL=grpc
+      - OTEL_SERVICE_NAME=catle_quotation
+      - OTEL_EXPORTER_OTLP_INSECURE=true
+      - OTEL_TRACES_PROCESSOR=simple
     volumes:
       - .:/app
+    extra_hosts:
+      - signoz:host-gateway
     env_file:
       - .env.development
     networks:
       - quotation
-    command: python -m src.main
+    ports:
+      - "5000:5000"
+  
+  reverse-proxy:
+    image: nginx:latest
+    container_name: reverse-proxy
+    volumes:
+      - ./config/nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - quotation
+    ports:
+      - "80:80"
 
 networks:
   quotation:
